@@ -17,37 +17,25 @@ An interactive WebGL application that generates and renders 3D geometric shapes 
 ### Prerequisites
 
 - A modern web browser with WebGL 2.0 support
-- Basic HTML server (can be local)
+- Local web server for development
 
-### Installation
+### Running the Application
 
-1. Include the required HTML elements in your page:
+1. Clone the repository
+2. Serve the directory using a local web server
+3. Open `index.html` in your browser
 
-```html
-<canvas></canvas>
-<input type="number" id="rings" value="10" min="1">
-<input type="number" id="slices" value="10" min="3">
-<input type="checkbox" id="torus">
-<button id="generate">Generate</button>
-```
-
-2. Include the JavaScript file in your HTML:
-
-```html
-<script src="geometry-generator.js"></script>
-```
+The application requires the following dependencies (included via CDN):
+- gl-matrix 2.8.1
 
 ## Usage
 
-1. Select the geometry type:
-   - Unchecked: Sphere
-   - Checked: Torus
+The interface provides several controls for generating geometry:
 
-2. Adjust the tessellation parameters:
-   - Rings: Controls the number of horizontal divisions
-   - Slices: Controls the number of vertical divisions
-
-3. Click "Generate" to create the new geometry
+- **Rings**: Controls the number of horizontal divisions (min: 1)
+- **Slices**: Controls the number of vertical divisions (min: 3)
+- **Torus**: Toggle between sphere (unchecked) and torus (checked)
+- **Generate**: Click to create new geometry with current parameters
 
 ## Technical Details
 
