@@ -18,6 +18,7 @@ An interactive WebGL application that generates and renders 3D geometric shapes 
 
 - A modern web browser with WebGL 2.0 support
 - Local web server for development
+- gl-matrix library (included via CDN for matrix math operations)
 
 ### Running the Application
 
@@ -25,17 +26,16 @@ An interactive WebGL application that generates and renders 3D geometric shapes 
 2. Serve the directory using a local web server
 3. Open `index.html` in your browser
 
-The application requires the following dependencies (included via CDN):
-- gl-matrix 2.8.1
+## Controls
 
-## Usage
+The interface provides a control panel at the top with the following options:
 
-The interface provides several controls for generating geometry:
+- **Rings**: Number of horizontal divisions (default: 8, minimum: 1)
+- **Slices**: Number of vertical divisions (default: 16, minimum: 3)
+- **Torus**: Checkbox to toggle between sphere and torus geometry
+- **Generate**: Button to update the geometry with current parameters
 
-- **Rings**: Controls the number of horizontal divisions (min: 1)
-- **Slices**: Controls the number of vertical divisions (min: 3)
-- **Torus**: Toggle between sphere (unchecked) and torus (checked)
-- **Generate**: Click to create new geometry with current parameters
+The rest of the window contains a WebGL canvas that shows the generated geometry with automatic camera rotation.
 
 ## Technical Details
 
@@ -60,24 +60,12 @@ The application uses GLSL 300 es shaders with the following features:
 - Creates indices for triangle strips
 - Calculates smooth normals per vertex
 
-```javascript
-// Example sphere parameters
-const rings = 10;    // Horizontal divisions
-const slices = 16;   // Vertical divisions
-```
-
 #### Torus Generation
 - Generates vertices using parametric equations
 - Creates indices for triangle strips
 - Calculates normals based on surface tangents
 
-```javascript
-// Example torus parameters
-const R = 1.0;       // Major radius
-const r = 0.3;       // Minor radius
-```
-
-## Camera Controls
+## Camera
 
 The camera orbits around the object automatically:
 - Radius: 5.0 units
