@@ -18,7 +18,6 @@ An interactive WebGL application that generates and renders 3D geometric shapes 
 
 - A modern web browser with WebGL 2.0 support
 - Local web server for development
-- gl-matrix library (included via CDN for matrix math operations)
 
 ### Running the Application
 
